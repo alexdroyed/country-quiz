@@ -1,0 +1,20 @@
+.quizCounter {
+  display: flex;
+  gap: 12px;
+}
+
+.quizButton {
+  background-color: var(--button-background-color);
+  border-radius: 50%;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+}
+
+.isSelected {
+  background: linear-gradient(#e65895, #bc6be8);
+}

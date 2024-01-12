@@ -1,0 +1,26 @@
+.question {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 2rem;
+}
+
+.answer {
+  padding: 18px 68px;
+  color: var(--text-color);
+  background-color: var(--button-background-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background: linear-gradient(#e65895, #bc6be8);
+}

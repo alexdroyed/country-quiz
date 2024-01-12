@@ -7,6 +7,7 @@ interface State {
   questions: Question[]
   currentQuestion: number
   fetchCountries: () => Promise<void>
+  changeCurrentQuestion: (newCurrentQuestion: number) => void
 }
 
 export const useQuizStore = create<State>((set) => ({
