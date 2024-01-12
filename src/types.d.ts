@@ -7,5 +7,6 @@ export type Question = {
   id: string
   question: string
   correctAnswer: string
+  userAnswer: string | null
   answers: string[]
 }

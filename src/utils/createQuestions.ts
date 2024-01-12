@@ -1,4 +1,4 @@
-import { Country } from '../types'
+import { Country, Question } from '../types'
 
 interface Props {
   countries: Country[]
@@ -13,7 +13,7 @@ const question = {
 }
 
 export async function createQuestions({ countries, limit }: Props) {
-  const questions = []
+  const questions: Question[] = []
 
   for (let i = 0; i < limit; i++) {
     const possibleCountries = countries
@@ -29,6 +29,7 @@ export async function createQuestions({ countries, limit }: Props) {
       question: question[askFor](chosenQuestion),
       correctAnswer: chosenQuestion.name.common,
       answers: possibleCountries.map((country) => country.name.common),
+      userAnswer: null,
     })
   }
 

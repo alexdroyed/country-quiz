@@ -12,15 +12,22 @@
 }
 
 .answer {
-  padding: 18px 68px;
-  color: var(--text-color);
   background-color: var(--button-background-color);
   border: none;
   border-radius: 10px;
-  font-size: 1.2rem;
+  color: var(--text-color);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  padding: 18px 68px;
 }
 
 .answer:hover {
+  background: linear-gradient(#e65895, #bc6be8);
+}
+
+.selectedAnswer {
   background: linear-gradient(#e65895, #bc6be8);
 }

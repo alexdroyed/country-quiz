@@ -5,14 +5,15 @@ import { createQuestions } from '../utils/createQuestions'
 
 interface State {
   questions: Question[]
-  currentQuestion: number
+  currentQuestionIndex: number
   fetchCountries: () => Promise<void>
   changeCurrentQuestion: (newCurrentQuestion: number) => void
+  selectAnswer: (userAnswer: string, questionId: string) => void
 }
 
-export const useQuizStore = create<State>((set) => ({
+export const useQuizStore = create<State>((set, get) => ({
   questions: [],
-  currentQuestion: 0,
+  currentQuestionIndex: 0,
   fetchCountries: async () => {
     const countries = await getCountries()
     const questions = await createQuestions({ countries, limit: 10 })
@@ -20,6 +21,22 @@ export const useQuizStore = create<State>((set) => ({
     set({ questions })
   },
   changeCurrentQuestion: (newCurrentQuestion: number) => {
-    set({ currentQuestion: newCurrentQuestion })
+    set({ currentQuestionIndex: newCurrentQuestion })
+  },
+  selectAnswer: (userAnswer: string, questionId: string) => {
+    const { questions } = get()
+
+    const newQuestions = questions.map((question) => {
+      if (question.id === questionId) {
+        return {
+          ...question,
+          userAnswer,
+        }
+      }
+
+      return question
+    })
+
+    set({ questions: newQuestions })
   },
 }))

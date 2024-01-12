@@ -5,7 +5,7 @@ export function QuizCounter() {
   const { questions, currentQuestion, changeCurrentQuestion } = useQuizStore(
     (state) => ({
       questions: state.questions,
-      currentQuestion: state.currentQuestion,
+      currentQuestion: state.currentQuestionIndex,
       changeCurrentQuestion: state.changeCurrentQuestion,
     })
   )
