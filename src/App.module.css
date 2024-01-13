@@ -1,11 +1,22 @@
 .container {
   background-color: #393f6e;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
-  width: 50vw;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    border-radius: 15px;
+    height: 60vh;
+    width: 70vw;
+  }
+
+  @media (min-width: 1024px) {
+    height: 60vh;
+    width: 56vw;
+  }
 }
 
 .title {

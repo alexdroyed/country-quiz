@@ -3,6 +3,7 @@ import styles from './App.module.css'
 import { useQuizStore } from './store/quiz'
 import { Question } from './components/Question'
 import { QuizCounter } from './components/QuizCounter'
+import { Congrats } from './components/Congrats'
 
 function App() {
   const { fetchCountries, questions } = useQuizStore((state) => ({
@@ -10,9 +11,17 @@ function App() {
     questions: state.questions,
   }))
 
+  const areAllAnswered = questions.every(
+    (question) => question.userAnswer !== null
+  )
+
   useEffect(() => {
     fetchCountries()
   }, [])
+
+  if (areAllAnswered && questions.length) {
+    return <Congrats />
+  }
 
   return (
     <main className={styles.container}>

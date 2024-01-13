@@ -1,0 +1,62 @@
+.container {
+  align-items: center;
+  background-color: #393f6e;
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 54vh;
+  padding-top: 38px;
+  width: 100vw;
+
+  @media (min-width: 768px) {
+    width: 80vw;
+  }
+
+  @media (min-width: 1024px) {
+    height: 54vh;
+    width: 36vw;
+  }
+}
+
+.congratsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  img {
+    width: 90vw;
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
+  }
+}
+
+.congratsTitle {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+}
+
+.congratsContent {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.congratsButton {
+  background: linear-gradient(#e65895, #bc6be8);
+  border: none;
+  border-radius: 10px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 12px 64px;
+}

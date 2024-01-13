@@ -20,8 +20,18 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  font-size: 1.2rem;
-  padding: 18px 68px;
+  font-size: 1rem;
+  padding: 18px 32px;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    padding: 18px 48px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.2rem;
+    padding: 18px 52px;
+  }
 }
 
 .answer:hover {

@@ -5,13 +5,6 @@ interface Props {
   limit: number
 }
 
-const question = {
-  askForFlag: (country: Country) =>
-    `Which country does this flag ${country.flags.svg} belong to?`,
-  askForCapital: (country: Country) =>
-    `Which country is ${country.capital} the capital?`,
-}
-
 export async function createQuestions({ countries, limit }: Props) {
   const questions: Question[] = []
 
@@ -22,13 +15,13 @@ export async function createQuestions({ countries, limit }: Props) {
 
     const chosenQuestion = possibleCountries[0]
 
-    const askFor = chosenQuestion.capital ? 'askForCapital' : 'askForFlag'
-
     questions.push({
       id: `${chosenQuestion.name.common}-${chosenQuestion.region}-${i}`,
-      question: question[askFor](chosenQuestion),
+      question: `Which country is ${chosenQuestion.capital} the capital?`,
       correctAnswer: chosenQuestion.name.common,
-      answers: possibleCountries.map((country) => country.name.common),
+      answers: possibleCountries
+        .sort(() => Math.random() - 0.5)
+        .map((country) => country.name.common),
       userAnswer: null,
     })
   }

@@ -11,7 +11,8 @@ export async function getCountries(): Promise<Country[]> {
 
     const slicedData = validatedData
       .sort(() => Math.random() - 0.5)
-      .slice(0, 50)
+      .slice(0, 80)
+      .filter((country) => country.capital !== null)
 
     return slicedData
   } catch (error) {
