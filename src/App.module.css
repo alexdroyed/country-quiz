@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
@@ -14,6 +15,11 @@
   }
 
   @media (min-width: 1024px) {
+    height: 66vh;
+    width: 56vw;
+  }
+
+  @media (min-width: 1280px) {
     height: 60vh;
     width: 56vw;
   }
